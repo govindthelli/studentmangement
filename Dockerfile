@@ -1,6 +1,6 @@
 #stage-1
 
-FROM maven:latest AS builder
+FROM maven:9.0 AS builder
 
 WORKDIR /app
 
