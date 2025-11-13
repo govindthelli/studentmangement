@@ -1,6 +1,6 @@
 #stage-1
 
-FROM maven:9.0 AS builder
+FROM maven:latest AS builder
 
 WORKDIR /app
 
@@ -14,7 +14,7 @@ RUN mvn clean package -Dskiptests
 
 #stage 2
 
-FROM tomcat:latest
+FROM tomcat:9.0
 
 COPY --from=builder /app/target/*.war /usr/local/tomcat/webapps/ROOT.war
 
